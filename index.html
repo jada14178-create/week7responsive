@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GoodKid.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- W3CSS Framework -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/my-styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="w3-container w3-black site-header">
+        <h1 class="site-title">Jada Bellille – Portfolio</h1>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Page Title -->
+    <section class="w3-container page-header">
+        <h1>Scanned Photo Gallery</h1>
+    </section>
+
+
+    <!-- Intro -->
+    <section class="w3-container intro-text">
+       
+    </section>
+
+
+    <!-- Row Example 1 -->
+   
+       
+    <section class="w3-row row-color-1 gallery-row">
+        <article class="w3-col s12 m4 l4 gallery-item">
+            <h4>Men in Black</h4>
+            <img src="assets/JB 4_last-try.jpg" alt="Men in Black image">
+        </article>
+
+        <article class="w3-col s12 m4 l4 gallery-item">
+            <h4>Sleeping Still</h4>
+                <img src="assets/JB7-img-72.jpg" alt="Sleeping figure image">
+            </a>
+        </article>
+
+        <article class="w3-col s12 m4 l4 gallery-item">
+            <h4>Print AD</h4>
+            <img src="assets/JB2-img-72.jpg" alt="Print advertisement image">
+        </article>
+    </section>
+
+    
+    <div class="slideshow-container">
+
+    <div class="slideshow fade">
+        <img src="assets/JB 2-img-4x6.jpg" alt="Scanned photo 1">
+    </div>
+
+    <div class="slideshow fade">
+        <img src="assets/JB 4_last-try.jpg" alt="Scanned photo 2">
+    </div>
+
+    <div class="slideshow fade">
+        <img src="assets/JB-4-img-72.jpg" alt="Scanned photo 3">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+
+
+    <!-- Outro -->
+    <section class="w3-container closing-text">
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-padding-32">
+        <p>&copy; 2025 Jada Bellille</p>
+    </footer>
+
+  <script>
+let slideIndex = 1;
+
+/* initialise on page load */
+window.addEventListener('DOMContentLoaded', () => showSlides(slideIndex));
+
+/* move forward / backward */
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+/* jump to a specific slide */
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+/* core show/hide logic */
+function showSlides(n) {
+  const slides = document.querySelectorAll('.slideshow');
+  const dots   = document.querySelectorAll('.dot');
+
+  /* wrap around */
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1)             slideIndex = slides.length;
+
+  /* hide everything */
+  slides.forEach(s => s.style.display = 'none');
+  dots.forEach(d => d.classList.remove('active-dot'));
+
+  /* reveal the chosen slide + dot */
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].classList.add('active-dot');
+}
+</script>
+
+
+
+
+</body>
+<script src="script.js"></script>
+</html>
